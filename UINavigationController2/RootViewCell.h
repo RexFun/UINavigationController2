@@ -10,9 +10,11 @@
 
 @interface RootViewCell : UITableViewCell
 
+@property (nonatomic, strong) UILabel *sectionId;
 @property (nonatomic, strong) UILabel *sectionName;
+@property (nonatomic, strong) UILabel *sectionQty;
 
-- (void)setWithName:(NSString *)name;
+- (void)setWithId:(NSString *)_id andName:(NSString *)_name andQty:(NSString *)_qty;
 + (instancetype)cellWithTableView:(UITableView *)tableView;
 
 @end

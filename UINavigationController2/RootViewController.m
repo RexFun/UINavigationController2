@@ -22,13 +22,12 @@
 @synthesize navRowView;
 @synthesize navRowList;
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     
     //初始化数据
-    NSMutableArray *array = [[NSMutableArray alloc] init];
-    array = @[@"a",@"b",@"c",@"d",@"e",@"f",@"g"];
-    self.navRowList = array;
+    [self getData];
     
     //标题
     self.title = @"首页";
@@ -36,39 +35,42 @@
     navRowView = [[UITableView alloc] initWithFrame:CGRectMake(0, [[UIApplication sharedApplication] statusBarFrame].size.height, kDeviceWidth, kDeviceHeight) ];
     navRowView.delegate = self;
     navRowView.dataSource = self;
-
-//    [navRowView registerClass:[RootViewCell class] forCellReuseIdentifier:@"Cell"];
     
     navRowView.scrollEnabled = YES;
     navRowView.userInteractionEnabled = YES;
     [self.view addSubview:navRowView];
+    
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Table view data source
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
     return 1;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
     return self.navRowList.count;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
     RootViewCell *cell = [RootViewCell cellWithTableView:tableView];
-    [cell setWithName:[self.navRowList objectAtIndex:indexPath.row]];
+    [cell setWithId:[NSString stringWithFormat:@"%@",[[self.navRowList objectAtIndex:indexPath.row] objectForKey:@"ID"]]
+            andName:[[self.navRowList objectAtIndex:indexPath.row] objectForKey:@"NAME"]
+             andQty:[NSString stringWithFormat:@"%@",[[self.navRowList objectAtIndex:indexPath.row] objectForKey:@"QTY"]]
+    ];
     return cell;
 }
 
 #pragma mark - Delegate
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
     return 80;
 }
 /*
@@ -114,5 +116,34 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (void) getData
+{
+    NSString *sUrl = @"http://192.168.19.123:8181/paper/client/nav/getNavDataJson.action";
+    sUrl=[sUrl stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    NSURL * url=[NSURL URLWithString:sUrl];
+    
+    NSURLRequest *request=[[NSURLRequest alloc]initWithURL:url cachePolicy:0 timeoutInterval:15.0f];
+    
+    //发送异步请求
+    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse * _Nullable response, NSData * _Nullable data, NSError * _Nullable connectionError)
+    {
+        if (connectionError)
+        {
+            NSLog(@"%@",connectionError.localizedDescription);
+        }
+        else
+        {
+            NSArray *aJson = [NSJSONSerialization JSONObjectWithData: data options: NSJSONReadingMutableContainers error: nil];
+            navRowList = aJson;
+//            for(NSDictionary *item in aJson) {
+//                NSLog(@"Id: %@", [item objectForKey:@"ID"]);
+//                NSLog(@"Name: %@", [item objectForKey:@"NAME"]);
+//                NSLog(@"Qty: %@", [item objectForKey:@"QTY"]);
+//            }
+            [navRowView reloadData];
+        }
+    }];
+}
 
 @end
