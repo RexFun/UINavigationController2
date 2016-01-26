@@ -9,14 +9,14 @@
 /* Begin PBXBuildFile section */
 		71E635471C506F9100B52FB3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 71E635461C506F9100B52FB3 /* main.m */; };
 		71E6354A1C506F9200B52FB3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 71E635491C506F9200B52FB3 /* AppDelegate.m */; };
-		71E6354D1C506F9200B52FB3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71E6354C1C506F9200B52FB3 /* ViewController.m */; };
+		71E6354D1C506F9200B52FB3 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71E6354C1C506F9200B52FB3 /* SecondViewController.m */; };
 		71E635501C506F9200B52FB3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71E6354E1C506F9200B52FB3 /* Main.storyboard */; };
 		71E635521C506F9200B52FB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71E635511C506F9200B52FB3 /* Assets.xcassets */; };
 		71E635551C506F9200B52FB3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71E635531C506F9200B52FB3 /* LaunchScreen.storyboard */; };
 		71E635601C506F9200B52FB3 /* UINavigationController2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 71E6355F1C506F9200B52FB3 /* UINavigationController2Tests.m */; };
 		71E6356B1C506F9200B52FB3 /* UINavigationController2UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 71E6356A1C506F9200B52FB3 /* UINavigationController2UITests.m */; };
-		71E6357A1C506FE200B52FB3 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71E635791C506FE200B52FB3 /* RootViewController.m */; settings = {ASSET_TAGS = (); }; };
-		71E6357D1C50749600B52FB3 /* RootViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 71E6357C1C50749600B52FB3 /* RootViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		71E6357A1C506FE200B52FB3 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71E635791C506FE200B52FB3 /* RootViewController.m */; };
+		71E6357D1C50749600B52FB3 /* RootViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 71E6357C1C50749600B52FB3 /* RootViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,8 +41,8 @@
 		71E635461C506F9100B52FB3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		71E635481C506F9100B52FB3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		71E635491C506F9200B52FB3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		71E6354B1C506F9200B52FB3 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		71E6354C1C506F9200B52FB3 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		71E6354B1C506F9200B52FB3 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		71E6354C1C506F9200B52FB3 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		71E6354F1C506F9200B52FB3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		71E635511C506F9200B52FB3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		71E635541C506F9200B52FB3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -113,8 +113,8 @@
 				71E635791C506FE200B52FB3 /* RootViewController.m */,
 				71E6357B1C50749600B52FB3 /* RootViewCell.h */,
 				71E6357C1C50749600B52FB3 /* RootViewCell.m */,
-				71E6354B1C506F9200B52FB3 /* ViewController.h */,
-				71E6354C1C506F9200B52FB3 /* ViewController.m */,
+				71E6354B1C506F9200B52FB3 /* SecondViewController.h */,
+				71E6354C1C506F9200B52FB3 /* SecondViewController.m */,
 				71E6354E1C506F9200B52FB3 /* Main.storyboard */,
 				71E635511C506F9200B52FB3 /* Assets.xcassets */,
 				71E635531C506F9200B52FB3 /* LaunchScreen.storyboard */,
@@ -283,7 +283,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				71E6354D1C506F9200B52FB3 /* ViewController.m in Sources */,
+				71E6354D1C506F9200B52FB3 /* SecondViewController.m in Sources */,
 				71E6357D1C50749600B52FB3 /* RootViewCell.m in Sources */,
 				71E6354A1C506F9200B52FB3 /* AppDelegate.m in Sources */,
 				71E6357A1C506FE200B52FB3 /* RootViewController.m in Sources */,
@@ -513,6 +513,7 @@
 				71E635711C506F9200B52FB3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		71E635721C506F9200B52FB3 /* Build configuration list for PBXNativeTarget "UINavigationController2Tests" */ = {
 			isa = XCConfigurationList;
@@ -521,6 +522,7 @@
 				71E635741C506F9200B52FB3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		71E635751C506F9200B52FB3 /* Build configuration list for PBXNativeTarget "UINavigationController2UITests" */ = {
 			isa = XCConfigurationList;
@@ -529,6 +531,7 @@
 				71E635771C506F9200B52FB3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
