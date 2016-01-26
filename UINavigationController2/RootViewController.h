@@ -8,10 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "RootViewCell.h"
+#import "SecondViewController.h"
 
 @interface RootViewController : UITableViewController
 
-@property (nonatomic, strong) UITableView *navRowView;
 @property (nonatomic, strong) NSArray *navRowList;
+@property (nonatomic, strong) SecondViewController *secondViewController;
 
 @end

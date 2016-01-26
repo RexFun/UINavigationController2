@@ -14,34 +14,28 @@
 @synthesize sectionName;
 @synthesize sectionQty;
 
-+ (instancetype)cellWithTableView:(UITableView *)tableView
-{
++ (instancetype)cellWithTableView:(UITableView *)tableView {
     static NSString *identifier = @"Cell";
     // 1.缓存中取
     RootViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     // 2.创建
-    if (cell == nil)
-    {
+    if (cell == nil) {
         cell = [[RootViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
     return cell;
 }
 
-- (void)awakeFromNib
-{
+- (void)awakeFromNib {
     // Initialization code
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated
-{
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 }
 
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
-{
+- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    if (self)
-    {
+    if (self) {
         //id
         self.sectionId = [[UILabel alloc] init];
         [self.contentView addSubview:self.sectionId];
@@ -58,19 +52,18 @@
 /**
  设置Cell
  */
-- (void)setWithId:(NSString *)_id andName:(NSString *)_name andQty:(NSString *)_qty
-{
+- (void)setWithId:(NSString *)_id andName:(NSString *)_name andQty:(NSString *)_qty {
     self.sectionId.frame = CGRectMake(10, 25, 80, 30);
     self.sectionId.text = _id;
-    [self addSubview:sectionId];
+//    [self addSubview:sectionId];
     
     self.sectionName.frame = CGRectMake(80, 25, 200, 30);
     self.sectionName.text = _name;
-    [self addSubview:sectionName];
+//    [self addSubview:sectionName];
     
     self.sectionQty.frame = CGRectMake(280, 25, 30, 30);
     self.sectionQty.text = _qty;
-    [self addSubview:sectionQty];
+//    [self addSubview:sectionQty];
 }
 
 @end
